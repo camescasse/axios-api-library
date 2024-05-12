@@ -1,6 +1,8 @@
 import Author from '../models/Author';
 import APIClient from './APIClient';
 
-const client = new APIClient<Author>('/api/authors');
+const ENDPOINT = '/api/authors';
+
+const client = new APIClient<Author>(ENDPOINT);
 
 export default client;
