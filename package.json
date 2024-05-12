@@ -4,21 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/main.ts",
-    "build": "tsc",
-    "start": "node dist/main.js",
-    "test": "mocha --require ts-node/register src/**/*.test.ts"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "4.3.16",
-    "@types/mocha": "10.0.6",
     "axios": "1.6.8",
-    "chai": "5.1.0",
-    "mocha": "10.4.0",
-    "ts-node": "10.9.2",
-    "typescript": "5.4.5"
+    "chai": "5.1.1",
+    "mocha": "10.4.0"
   }
 }
