@@ -2,6 +2,7 @@
   "name": "axios-api-library",
   "version": "1.0.0",
   "description": "",
+  "main": "src/main.ts",
   "scripts": {
     "dev": "ts-node src/main.ts",
     "build": "tsc",
