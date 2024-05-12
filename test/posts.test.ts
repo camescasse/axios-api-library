@@ -1,27 +1,21 @@
-import axios from 'axios';
 import { describe, expect, it } from 'vitest';
 import Post from '../src/models/Post';
-
-const api = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  timeout: 1000,
-});
+import PostService from '../src/services/PostService';
 
 describe('Post tests', () => {
-  const endpoint = '/posts/';
-
+  const service = new PostService();
   describe('GET methods', () => {
     it('should return a post when given an id', async () => {
       const id = 1;
-      const response = await api.get<Post>(endpoint + id);
+      const response = await service.getById(1);
 
-      expect(response.data.id).equals(id);
+      expect(response.data.id).equals(1);
     });
 
     it('should return all posts', async () => {
-      const response = await api.get<Post>(endpoint);
+      const response = await service.getAll();
 
-      expect(response.data).toBeTruthy();
+      expect(response.data).to.be.an('array');
     });
   });
 
@@ -34,7 +28,7 @@ describe('Post tests', () => {
         body: 'el cuerpo del titulito',
       };
 
-      const response = await api.post<Post>(endpoint, post);
+      const response = await service.create(post);
 
       expect(response.data.title).equals(post.title);
     });
