@@ -1,5 +1,6 @@
 import axios from 'axios';
 import User from '../models/User';
+import axiosRetry from 'axios-retry';
 
 const ENDPOINT = '/api/users/login';
 
@@ -11,8 +12,8 @@ class UserService {
 
 const instance = axios.create({
   baseURL: 'https://api-library-smoky.vercel.app',
-  timeout: 1000,
 });
+axiosRetry(instance, { retryDelay: axiosRetry.exponentialDelay, retries: 3 });
 
 interface LoginResponse {
   token: string;

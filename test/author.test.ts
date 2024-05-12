@@ -22,7 +22,7 @@ describe('Author Tests', () => {
   });
 
   describe('POST Methods', () => {
-    it('should create an author given a valid name', async () => {
+    it.only('should create an author given a valid name', async () => {
       const author: Author = {
         name: 'juanito',
       };

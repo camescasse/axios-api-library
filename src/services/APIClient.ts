@@ -1,9 +1,10 @@
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 
 const instance = axios.create({
   baseURL: 'https://api-library-smoky.vercel.app',
-  timeout: 1000,
 });
+axiosRetry(instance, { retryDelay: axiosRetry.exponentialDelay, retries: 3 });
 
 class APIClient<T> {
   endpoint: string;
