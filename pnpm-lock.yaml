@@ -8,20 +8,26 @@ importers:
 
   .:
     devDependencies:
+      '@types/chai':
+        specifier: ^4.3.16
+        version: 4.3.16
+      '@types/mocha':
+        specifier: ^10.0.6
+        version: 10.0.6
       axios:
-        specifier: ^1.6.8
+        specifier: 1.6.8
         version: 1.6.8
       chai:
-        specifier: ^5.1.0
-        version: 5.1.1
+        specifier: 5.1.0
+        version: 5.1.0
       mocha:
-        specifier: ^10.4.0
+        specifier: 10.4.0
         version: 10.4.0
       ts-node:
-        specifier: ^10.9.2
+        specifier: 10.9.2
         version: 10.9.2(@types/node@20.12.11)(typescript@5.4.5)
       typescript:
-        specifier: ^5.4.5
+        specifier: 5.4.5
         version: 5.4.5
 
 packages:
@@ -51,6 +57,12 @@ packages:
 
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+
+  '@types/chai@4.3.16':
+    resolution: {integrity: sha512-PatH4iOdyh3MyWtmHVFXLWCCIhUbopaltqddG9BzB+gMIzee2MJrvd+jouii9Z3wzQJruGWAm7WOMjgfG8hQlQ==}
+
+  '@types/mocha@10.0.6':
+    resolution: {integrity: sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==}
 
   '@types/node@20.12.11':
     resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
@@ -117,8 +129,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  chai@5.1.1:
-    resolution: {integrity: sha512-pT1ZgP8rPNqUgieVaEY+ryQr6Q4HXNg8Ei9UnLUrjN4IA7dvQC5JB+/kxVcPNDHyBcc/26CXPkbNzq3qwrOEKA==}
+  chai@5.1.0:
+    resolution: {integrity: sha512-kDZ7MZyM6Q1DhR9jy7dalKohXQ2yrlXkk59CR52aRKxJrobmlBNqnFQxX9xOX8w+4mz8SYlKJa/7D7ddltFXCw==}
     engines: {node: '>=12'}
 
   chalk@4.1.2:
@@ -474,6 +486,10 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
+  '@types/chai@4.3.16': {}
+
+  '@types/mocha@10.0.6': {}
+
   '@types/node@20.12.11':
     dependencies:
       undici-types: 5.26.5
@@ -527,7 +543,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  chai@5.1.1:
+  chai@5.1.0:
     dependencies:
       assertion-error: 2.0.1
       check-error: 2.1.1
