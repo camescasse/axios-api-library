@@ -3,14 +3,20 @@ import axios from 'axios';
 import authorService from '../src/services/AuthorService';
 import UserService from '../src/services/UserService';
 import Author from '../src/models/Author';
+import 'dotenv/config';
 
 describe('Author Tests', () => {
   const userService = new UserService();
 
   beforeAll(async () => {
+    const email = process.env.EMAIL;
+    const password = process.env.PASSWORD;
+
+    if (!email || !password) throw new Error('EMAIL and PASSWORD must be defined in your .env');
+
     const response = await userService.login({
-      email: 'user+1@gmail.com',
-      password: 'abc123',
+      email: process.env.EMAIL!,
+      password: process.env.PASSWORD!,
     });
 
     authorService.setToken(response.data.token);
