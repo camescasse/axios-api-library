@@ -1,15 +1,20 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: 'https://api-library-smoky.vercel.app',
   timeout: 1000,
 });
 
 class APIClient<T> {
   endpoint: string;
+  token: string;
 
   constructor(endpoint: string) {
     this.endpoint = endpoint;
+  }
+
+  setToken(token: string) {
+    instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }
 
   async getById(id: number) {
