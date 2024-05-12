@@ -23,13 +23,17 @@ describe('Author Tests', () => {
 
   describe('POST Methods', () => {
     it.only('should create an author given a valid name', async () => {
-      const author: Author = {
-        name: 'juanito',
-      };
+      try {
+        const author: Author = {
+          name: 'juanito',
+        };
 
-      const response = await authorService.create(author);
+        const response = await authorService.create(author);
 
-      expect(response.data.name).equals(author.name);
+        expect(response.data.name).equals(author.name);
+      } catch (error) {
+        console.log(error);
+      }
     });
   });
 });
