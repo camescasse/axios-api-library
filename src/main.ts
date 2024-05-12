@@ -1,5 +1,3 @@
-function main() {
-  console.log('Hello World!~');
+export function addition(a: number, b: number): number {
+  return a + b;
 }
-
-main();
