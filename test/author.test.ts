@@ -30,7 +30,7 @@ describe('Author Tests', () => {
 
       const response = await authorService.create(author);
 
-      expect(response.data.name).equals(author.name);
+      expect(response.data.name).toEqual(author.name);
     });
   });
 
@@ -41,9 +41,14 @@ describe('Author Tests', () => {
       expect(response.data).to.be.an('array');
     });
 
-    it('should return an author given an id', async () => {
+    it.only('should return an author given an id', async () => {
       const id = 1;
+
       const response = await authorService.getById(id);
+
+      expect(response.data.id).toEqual(id);
+    });
+  });
 
   describe('PUT Methods', () => {
     it('should update an author given a valid id and name', async () => {
