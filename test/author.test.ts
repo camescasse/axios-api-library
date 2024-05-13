@@ -1,10 +1,9 @@
 import 'dotenv/config';
 import { beforeAll, describe, expect, it } from 'vitest';
 import Author from '../src/models/Author';
+import AuthorBookService from '../src/services/AuthorBookService';
 import authorService from '../src/services/AuthorService';
 import UserService from '../src/services/UserService';
-import Author from '../src/models/Author';
-import 'dotenv/config';
 
 describe('Author Tests', () => {
   const userService = new UserService();
