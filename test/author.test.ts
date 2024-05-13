@@ -41,7 +41,7 @@ describe('Author Tests', () => {
       expect(response.data).to.be.an('array');
     });
 
-    it.only('should return an author given an id', async () => {
+    it('should return an author given an id', async () => {
       const id = 1;
 
       const response = await authorService.getById(id);
