@@ -29,6 +29,18 @@ class APIClient<T> {
   async create(data: T) {
     return await instance.post<T>(this.endpoint, data);
   }
+
+  async delete(id: number) {
+    return await instance.delete<T>(this.endpoint + id);
+  }
+
+  async update(data: T, id: number) {
+    return await instance.patch<T>(this.endpoint + id, data);
+  }
+
+  async override(data: T, id: number) {
+    return await instance.put<T>(this.endpoint + id, data);
+  }
 }
 
 export default APIClient;
