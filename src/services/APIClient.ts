@@ -18,12 +18,20 @@ class APIClient<T> {
     instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }
 
-  async getById(id: number) {
-    return await instance.get<T>(this.endpoint + id);
+  async getById(id: number, parentId?: number, childDirectory?: string) {
+    if (!parentId) {
+      return await instance.get<T>(this.endpoint + id);
+    } else {
+      return await instance.get<T>(this.endpoint + parentId + childDirectory + id);
+    }
   }
 
-  async getAll() {
-    return await instance.get<T[]>(this.endpoint);
+  async getAll(id?: number, childDirectory?: string) {
+    if (!id) {
+      return await instance.get<T[]>(this.endpoint);
+    } else {
+      return await instance.get<T[]>(this.endpoint + id + childDirectory);
+    }
   }
 
   async create(data: T) {
