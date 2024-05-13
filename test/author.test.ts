@@ -84,6 +84,11 @@ describe('Author Tests', () => {
       const newAuthor: Author = createdAuthor.data;
 
       const deletedAuthor = await authorService.delete(newAuthor.id);
+
+      expect(deletedAuthor.data.id).toEqual(newAuthor.id);
+    });
+  });
+
     });
   });
 });
