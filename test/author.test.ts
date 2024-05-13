@@ -1,4 +1,6 @@
-import { describe, expect, it, beforeAll } from 'vitest';
+import 'dotenv/config';
+import { beforeAll, describe, expect, it } from 'vitest';
+import Author from '../src/models/Author';
 import authorService from '../src/services/AuthorService';
 import UserService from '../src/services/UserService';
 import Author from '../src/models/Author';
