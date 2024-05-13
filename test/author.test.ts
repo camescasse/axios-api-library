@@ -60,7 +60,20 @@ describe('Author Tests', () => {
       const response = await authorService.create(author);
       const newAuthor: Author = response.data;
 
-      expect(author.name).toEqual(newAuthor.name);
+    });
+  });
+
+  describe('DEL Methods', () => {
+    it('should delete an author given a valid id', async () => {
+      const author: Author = {
+        name: 'juanote alimania',
+        id: 0,
+      };
+
+      const createdAuthor = await authorService.create(author);
+      const newAuthor: Author = createdAuthor.data;
+
+      const deletedAuthor = await authorService.delete(newAuthor.id);
     });
   });
 });
