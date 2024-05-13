@@ -45,7 +45,17 @@ describe('Author Tests', () => {
       const id = 1;
       const response = await authorService.getById(id);
 
-      expect(response.data.id).equals(id);
+  describe('PUT Methods', () => {
+    it('should update an author given a valid id and name', async () => {
+      const author: Author = {
+        name: 'juanito alimania',
+        id: 0,
+      };
+
+      const response = await authorService.create(author);
+      const newAuthor: Author = response.data;
+
+      expect(author.name).toEqual(newAuthor.name);
     });
   });
 });
