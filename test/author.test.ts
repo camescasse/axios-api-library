@@ -33,4 +33,19 @@ describe('Author Tests', () => {
       expect(response.data.name).equals(author.name);
     });
   });
+
+  describe('GET Methods', () => {
+    it('should return all authors', async () => {
+      const response = await authorService.getAll();
+
+      expect(response.data).to.be.an('array');
+    });
+
+    it('should return an author given an id', async () => {
+      const id = 1;
+      const response = await authorService.getById(id);
+
+      expect(response.data.id).equals(id);
+    });
+  });
 });
