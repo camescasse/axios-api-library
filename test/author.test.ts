@@ -60,6 +60,14 @@ describe('Author Tests', () => {
       const response = await authorService.create(author);
       const newAuthor: Author = response.data;
 
+      const updatedAuthor: Author = {
+        name: 'juanito alimania actualizao',
+        id: 0,
+      };
+
+      const updateResponse = await authorService.override(updatedAuthor, newAuthor.id);
+
+      expect(updateResponse.data.name).toEqual(updatedAuthor.name);
     });
   });
 
