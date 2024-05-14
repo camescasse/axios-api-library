@@ -88,6 +88,26 @@ describe('Author Tests', () => {
     });
   });
 
+  describe('Author Books', () => {
+    describe('GET Methods', () => {
+      const authorBookService = new AuthorBookService();
+
+      it('should return all books of an author', async () => {
+        const id = 1;
+
+        const response = await authorBookService.getAll(1);
+
+        expect(response.data).to.be.an('array');
+      });
+
+      it('should return an author book given a valid authorId and bookId', async () => {
+        const authorId = 1;
+        const bookId = 1;
+
+        const response = await authorBookService.getById(authorId, bookId);
+
+        expect(response.data.id).toEqual(bookId);
+      });
     });
   });
 });
